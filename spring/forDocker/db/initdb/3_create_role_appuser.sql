@@ -1,0 +1,4 @@
+-- db ctrl user create
+CREATE ROLE admin_user WITH LOGIN PASSWORD 'admin_pass';
+GRANT SELECT,UPDATE,INSERT,DELETE ON ALL TABLES IN SCHEMA public TO admin_user;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO admin_user;

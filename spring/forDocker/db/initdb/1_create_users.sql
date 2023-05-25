@@ -1,0 +1,19 @@
+CREATE TABLE users (
+  id SERIAL,
+  -- u_name VARCHAR(255) NOT NULL,
+  phone VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+CREATE TABLE favorite (
+  id SERIAL,
+  uid INTEGER NOT NULL,
+  pid INTEGER NOT NULL,
+  PRIMARY KEY (id)
+);
+CREATE TABLE property (
+  id SERIAL,
+  name VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);

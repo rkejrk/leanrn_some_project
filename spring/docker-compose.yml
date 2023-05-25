@@ -1,0 +1,35 @@
+version: '3.6'
+services:
+  # app:
+  #   image: openjdk:17
+  #   container_name: app
+  #   ports:
+  #     - 8080:8080
+  #   tty: true
+  #   volumes:
+  #     - ./target:/srv:cached
+  #   working_dir: /srv
+  #   command: java -jar rest_api-0.0.1-SNAPSHOT.jar
+  #   depends_on:
+  #     - db
+
+  # adminer:
+  #   image: adminer:4.7.8
+  #   container_name: adminer
+  #   ports:
+  #     - "9000:8080"
+  #   depends_on:
+  #     - db
+
+  db:
+    image: postgres:13.1
+    container_name: db
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "dev"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./forDocker/dbvol:/var/lib/postgresql/data
+      - ./forDocker/db/initdb:/docker-entrypoint-initdb.d
